@@ -1,0 +1,21 @@
+body {
+    background-image: url(./photos/white_lion.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: cursive;
+}
+
+h3 {
+    color: azure;
+    animation-timing-function: ease-in;
+    font-family: fantasy;
+}
+
+h5 {
+    color: azure;
+    font-family: cursive;
+}
