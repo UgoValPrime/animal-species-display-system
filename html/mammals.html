@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mammals | Home</title>
+    <link rel="stylesheet" href="../mammals.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
 </head>
 
@@ -26,6 +27,27 @@
     <div class="container" style="margin-top: 80px;">
         <h4 class="display-8"> Well here's a list of those on display at DECADEV</h4>
     </div>
+    <div>
+        <ul id="mammals">
+
+        </ul>
+    </div>
 </body>
+<script src="../jquery2.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:3000/Animals",
+            success: function(result) {
+                let mamArr = result.filter(anim => anim.class == "mammalia");
+                let final = mamArr.map(current => {
+                    return `<li>${current.name}</li>`
+                })
+                $("#mammals").html(final)
+            },
+            type: "GET",
+        })
+    })
+</script>
 
 </html>

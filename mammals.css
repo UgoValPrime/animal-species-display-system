@@ -2,6 +2,7 @@ body {
     background-image: url(/photos/Gorillas-Micato5.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    color: aliceblue;
 }
 
 h1 {
@@ -19,4 +20,8 @@ h3 {
 p {
     color: aliceblue;
     font-size: 15px
+}
+
+ul {
+    color: azure;
 }

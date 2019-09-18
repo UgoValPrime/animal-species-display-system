@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../fish.css">
 </head>
+
 
 <body>
     <div class="container">
@@ -25,6 +27,28 @@
     <div class="container">
         <h4> These are on display at DECADEV</h4>
     </div>
+    <div>
+        <ul id="fish">
+
+        </ul>
+    </div>
 </body>
+<script src="../jquery2.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:3000/Animals",
+            success: function(result) {
+                let fishArr = result.filter(fin => fin.class == "fish");
+                let final = fishArr.map(current => {
+                    return `<li>${current.name}</li>`
+                })
+                $("#fish").html(final)
+            },
+            type: "GET",
+        })
+    })
+</script>
+
 
 </html>

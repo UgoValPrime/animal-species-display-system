@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="../amphibians.css">
 </head>
 
 <body>
@@ -25,6 +26,28 @@
     <div class="container">
         <h4> Well here's what we have on display at DECADEV</h4>
     </div>
+
+    <div>
+        <ul id="amphi">
+
+        </ul>
+    </div>
+    <script src="../jquery2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:3000/Animals",
+                success: function(result) {
+                    let amphiArr = result.filter(fin => fin.class == "amphi");
+                    let final = amphiArr.map(current => {
+                        return `<li>${current.name}</li>`
+                    })
+                    $("#amphi").html(final)
+                },
+                type: "GET",
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -15,20 +15,42 @@
 
         <div style="width: 200px;">
             <form id="addanimal">
-                <div class="form-group"><label>name:</label><input type="text" placeholder="name" class="form-control">
+                <div class="form-group"><label>name:</label><input type="text" placeholder="name" id="name" class="form-control">
                 </div>
-                <div class="form-group"><label>kigndom:</label><input type="text" placeholder="kingdom" class="form-control"></div>
-                <div class="form-group"><label>class:</label><input type="text" placeholder="class" class="form-control"></div>
-                <div class="form-group"><label>order:</label><input type="text" placeholder="order" class="form-control"></div>
-                <div class="form-group"><label>image_url:</label><input type="text" placeholder="image_url" class="form-control"></div>
+                <div class="form-group"><label>kingdom:</label><input type="text" placeholder="kingdom" id="kingdom" class="form-control"></div>
+                <div class="form-group"><label>class:</label><input type="text" placeholder="class" id="class" class="form-control"></div>
+                <div class="form-group"><label>order:</label><input type="text" placeholder="order" id="order" class="form-control"></div>
+                <div class="form-group"><label>image_url:</label><input type="text" placeholder="image_url" id="image" class="form-control"></div>
 
-                <button class="btn btn-dark">Create</button>
+                <button type="submit" class="btn btn-dark">Add</button>
             </form>
         </div>
 
     </div>
-    <script src="../jquery.js"></script>
+    <script src="../jquery2.js"></script>
     <script>
+        $(document).ready(function() {
+            $("#addanimal").on("submit", function(e) {
+                e.preventDefault();
+                let data = {
+                    name: $("#name").val(),
+                    kingdom: $("#kingdom").val(),
+                    class: $("#class").val(),
+                    order: $("#order").val(),
+                    url: $("#image").val()
+
+                }
+                $.ajax({
+                    url: "http://localhost:3000/Animals",
+                    success: function(result) {
+                        alert('its done');
+                    },
+                    type: "POST",
+                    data: data
+                })
+            })
+
+        })
     </script>
 </body>
 
