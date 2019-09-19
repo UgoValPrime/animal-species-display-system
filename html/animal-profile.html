@@ -21,19 +21,20 @@
         $(document).ready(function() {
             let url = new URLSearchParams(window.location.search);
             let id = url.get('id');
-
+            console.log(id)
             $.ajax({
-                url: `http://127.0.0.1:5501/html/animal-profile.html/id=${id}`,
+                url: `http://localhost:3000/Animals/${id}`,
                 method: "GET",
                 success: function(response) {
-                    console.log(response)
-                    $("#name").text(response.name);
+                    console.log(response.name)
+                    $("#name").html(response.name);
                     $("#kingdom").text(response.kingdom);
-                    $("class").text(response.class);
+                    $("#class").text(response.class);
                     $("#order").text(response.order);
-                    $("#image").text(respose.image_url);
+                    $("#image").text(response.image_url);
                 }
             })
+
         })
     </script>
 </body>

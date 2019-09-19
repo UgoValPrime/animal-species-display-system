@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../style3.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <style>
-        body {
+        /*body {
             background-image: url(C:\Users\user\Documents\Animal-species-display-system\photos\serengeti.jpg)
-        }
+        }*/
         
         #Header {
             width: 100%;
@@ -19,21 +20,15 @@
             color: azure;
         }
         
-        #Sidebar {
-            width: 300px;
-            height: 400px;
-            background-color: rgb(3, 74, 87);
-            color: azure;
-            float: left;
+        .container {
+            max-width: 400px;
         }
         
-        #Data {
-            height: 600px;
-            background: rgb(70, 69, 69);
+        #Sidebar {
+            margin-top: 70px;
         }
         
         ul li {
-            padding: 20px;
             border-bottom: 1px solid black;
             font-size: 25px
         }
@@ -42,6 +37,10 @@
             background: rgb(0, 0, 29);
             color: azure;
         }
+        
+        a {
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -49,24 +48,25 @@
     <div id="Header">
         <center> <img src="/photos/admin_logo.png" alt="admin_logo" style="width:100px"></center>
     </div>
+    <div class="container">
 
-    <div id="Sidebar">
-        <ul>
-            <li><a href="/html/add_animal.html" class="active">Add Animal</a> </li>
-            <li> <a href="http://127.0.0.1:5501/html/update-animal.html">Update Animal</a></li>
-            <li><a href="#">Remove Animal</a></li>
-            <li>
-                <a href="http://127.0.0.1:5501/index.html">View Animals</a> </li>
-            <li>
-                <a href="/html/create_admin.html">Add admin</a>
-            </li>
+        <div id="Sidebar">
+            <ul class="list-group mx-auto  center">
+                <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/html/add_animal.html" class="active">Add Animal</a> </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center"> <a href="http://127.0.0.1:5501/html/update-animal.html">Update Animal</a></li>
 
-
-        </ul>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="http://127.0.0.1:5501/html/new-file.html">View Animals</a> </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/html/create_admin.html">Add admin</a>
+                </li>
+            </ul>
+        </div>
     </div>
 
     <div id="Data">
     </div>
+    <script src="../jquery2.js"></script>
 </body>
 
 </html>

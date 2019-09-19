@@ -40,7 +40,7 @@
             success: function(result) {
                 let birdArr = result.filter(fin => fin.class == "bird");
                 let final = birdArr.map(current => {
-                    return `<li>${current.name}</li>`
+                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
                 })
                 $("#bird").html(final)
             },

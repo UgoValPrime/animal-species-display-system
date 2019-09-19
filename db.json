@@ -1,51 +1,83 @@
 {
-    "Animals": [{
-            "id": 1,
-            "name": "Lion",
-            "kingdom": "Animalia",
-            "class": "mammalia",
-            "order": "Canivora",
-            "url": "http://jghygtjfkfffjfjkgjnfjg.com"
-        },
-        {
-            "name": "cheetah",
-            "kingdom": "animalia",
-            "class": "mammalia",
-            "order": "carnivora",
-            "url": "http://ssdvsssvs.com",
-            "id": 2
-        },
-        {
-            "name": "gorilla",
-            "kingdom": "animalia",
-            "class": "mammalia",
-            "order": "omnivores",
-            "url": "http://ssdvsssvs.com",
-            "id": 3
-        },
-        {
-            "name": "great white sahrk",
-            "kingdom": "animalia",
-            "class": "fish",
-            "order": "carnivora",
-            "url": "http://ssdvsssvs.com",
-            "id": 4
-        },
-        {
-            "name": "tilapia",
-            "kingdom": "animalia",
-            "class": "fish",
-            "order": "carnivora",
-            "url": "http://ssdvsssvs.com",
-            "id": 5
-        },
-        {
-            "name": "sardines",
-            "kingdom": "animalia",
-            "class": "fish",
-            "order": "carnivora",
-            "url": "http://ssdvsssvs.com",
-            "id": 6
-        }
-    ]
+  "admin": [
+    {
+      "id": 1,
+      "admin_id": "ugoval",
+      "password": "nemesis"
+    }
+  ],
+  "Animals": [
+    {
+      "name": "cheetah",
+      "kingdom": "animalia",
+      "class": "mammalia",
+      "order": "carnivora",
+      "url": "http://ssdvsssvs.com",
+      "id": 2
+    },
+    {
+      "name": "great white sahrk",
+      "kingdom": "animalia",
+      "class": "fish",
+      "order": "carnivora",
+      "url": "http://ssdvsssvs.com",
+      "id": 4
+    },
+    {
+      "name": "tilapia",
+      "kingdom": "animalia",
+      "class": "fish",
+      "order": "carnivora",
+      "url": "http://ssdvsssvs.com",
+      "id": 5
+    },
+    {
+      "name": "salamander",
+      "kingdom": "animalia",
+      "class": "amphibian",
+      "order": "carnivor",
+      "url": "http://ssdvsssvsmmmmmm.com",
+      "id": 6
+    },
+    {
+      "name": "frog",
+      "kingdom": "animalia",
+      "class": "amphibian",
+      "order": "carnivora",
+      "url": "http://ssdvsssvskk.com",
+      "id": 7
+    },
+    {
+      "name": "buffalo",
+      "kingdom": "animalia",
+      "class": "mammalia",
+      "order": "herbivores",
+      "url": "http://ssdvsssvs.com",
+      "id": 9
+    },
+    {
+      "name": "peregrine falcon",
+      "kingdom": "animalia",
+      "class": "bird",
+      "order": "carnivora",
+      "url": "http://ssdvsssvs.com",
+      "id": 10
+    },
+    {
+      "name": "seagull",
+      "kingdom": "animalia",
+      "class": "bird",
+      "order": "carnivora",
+      "url": "http://ssdvsssvskk.com",
+      "id": 11
+    },
+    {
+      "name": "sailfish",
+      "kingdom": "animalia",
+      "class": "fish",
+      "order": "carnivora",
+      "url": "http://ssdvsssvs.com",
+      "id": 12
+    }
+  ]
 }

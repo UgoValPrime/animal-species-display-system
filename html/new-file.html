@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../amphibians.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1>
+                ANIMAL LIST
+            </h1>
+        </center>
+    </div>
+    <div class="container">
+        <center>
+            <h3> </h3>
+        </center>
+    </div>
+    <div class="container">
+        <h4></h4>
+    </div>
+
+    <div>
+        <ul id="animalia">
+
+        </ul>
+    </div>
+    <script src="../jquery2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:3000/Animals",
+                success: function(result) {
+                    let amphiArr = result.filter(fin => fin.kingdom == "animalia");
+                    let final = amphiArr.map(current => {
+                        return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a>
+                        <button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/html/update-animal.html?id=${current.id}">Update</a>
+                        </li>`
+                    })
+                    $("#animalia").html(final)
+
+
+                },
+                type: "GET",
+            });
+
+        })
+    </script>
+
+
+    <script>
+        function deleteAnimal(id) {
+            alert(id)
+            $.ajax({
+                url: "http://localhost:3000/animals/" + id,
+                method: "delete"
+            }).done(resp => {
+                console.log(resp);
+            })
+
+        }
+    </script>
+</body>
+
+</html>2 ',92b,

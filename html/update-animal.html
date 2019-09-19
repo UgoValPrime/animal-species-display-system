@@ -34,6 +34,23 @@
     <script src="../jquery2.js"></script>
     <script>
         $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let id = urlParams.get('id');
+            console.log(id)
+            $.ajax({
+                url: `http://localhost:3000/Animals/${id}`,
+                type: "GET",
+                success: function(res) {
+                    console.log(window.location.search)
+                    $("#name").val(res.name)
+                    $("#kingdom").val(res.kingdom)
+                    $("#class").val(res.class)
+                    $("#order").val(res.order)
+                    $("#image").val(res.image)
+                }
+            })
+
+
             $("#updateAnimal").on("submit", function(e) {
                 e.preventDefault();
                 let data = {
@@ -45,9 +62,9 @@
 
                 }
                 $.ajax({
-                    url: "http://localhost:3000/Animals",
+                    url: `http://localhost:3000/Animals/${id}`,
                     success: function(result) {
-                        alert('its done');
+                        alert('update successful');
                     },
                     type: "PUT",
                     data: data

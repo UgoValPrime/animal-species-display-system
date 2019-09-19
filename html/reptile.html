@@ -26,6 +26,28 @@
     <div class="container">
         <h4> These are on display at DECADEV</h4>
     </div>
+    <div>
+        <ul id="reptile">
+
+        </ul>
+    </div>
+</body>
+<script src="../jquery2.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:3000/Animals",
+            success: function(result) {
+                let mamArr = result.filter(anim => anim.class == "reptile");
+                let final = mamArr.map(current => {
+                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                })
+                $("#reptile").html(final)
+            },
+            type: "GET",
+        })
+    })
+</script>
 </body>
 
 </html>
