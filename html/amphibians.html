@@ -38,7 +38,7 @@
             $.ajax({
                 url: "http://localhost:3000/Animals",
                 success: function(result) {
-                    let amphiArr = result.filter(fin => fin.class == "amphi");
+                    let amphiArr = result.filter(fin => fin.class == "amphibian");
                     let final = amphiArr.map(current => {
                         return `<li>${current.name}</li>`
                     })
