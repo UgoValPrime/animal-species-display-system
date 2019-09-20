@@ -7,30 +7,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../amphibians.css">
+    <!--<link rel="stylesheet" href="../amphibians.css">-->
 </head>
 
 <body>
-    <div class="container">
-        <center>
-            <h1>
-                ANIMAL LIST
-            </h1>
-        </center>
-    </div>
-    <div class="container">
-        <center>
-            <h3> </h3>
-        </center>
-    </div>
-    <div class="container">
-        <h4></h4>
-    </div>
-
-    <div>
-        <ul id="animalia">
-
-        </ul>
+    <div class="container mt-4">
+        <div>
+            <h1>Animal List</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Animal Name</th>
+                        <th scope="col">Animal Class</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="animalia">
+                </tbody>
+            </table>
+        </div>
     </div>
     <script src="../jquery2.js"></script>
     <script>
@@ -40,9 +35,11 @@
                 success: function(result) {
                     let amphiArr = result.filter(fin => fin.kingdom == "animalia");
                     let final = amphiArr.map(current => {
-                        return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a>
-                        <button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/html/update-animal.html?id=${current.id}">Update</a>
-                        </li>`
+                        return `<tr>
+                                    <td>${current.name}</td>
+                                    <td>${current.class}</td>
+                                    <td><button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/html/update-animal.html?id=${current.id}">Update</a></td>
+                                </tr>`
                     })
                     $("#animalia").html(final)
 
@@ -69,4 +66,4 @@
     </script>
 </body>
 
-</html>2 ',92b,
+</html>
